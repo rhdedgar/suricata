@@ -12,7 +12,7 @@ if [ "$OO_PAUSE_ON_START" = "true" ] ; then
   done
 fi
 
-echo 'version v0.0.3'
+echo 'version v0.0.4'
 echo
 echo This container hosts the following applications:
 echo
@@ -20,4 +20,4 @@ echo '/bin/suricata'
 echo
 echo 'Start suricata IDS.'
 echo '----------------'
-/usr/sbin/suricata
+/usr/sbin/suricata -c /etc/suricata/suricata.yaml -i eth0
