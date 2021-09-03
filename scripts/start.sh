@@ -20,4 +20,4 @@ echo '/bin/suricata'
 echo
 echo 'Start suricata IDS.'
 echo '----------------'
-/usr/sbin/suricata -c /etc/suricata/suricata.yaml -i eth0
+/usr/sbin/suricata -c /etc/suricata/suricata.yaml -i eth10
