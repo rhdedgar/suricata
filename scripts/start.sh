@@ -20,4 +20,5 @@ echo '/bin/suricata'
 echo
 echo 'Start suricata IDS.'
 echo '----------------'
-/usr/sbin/suricata -c /etc/suricata/suricata.yaml -i eth10
+# the first active broadcast interface value is what we want to listen on, usually ens5 or eth10
+/usr/sbin/suricata -c /etc/suricata/suricata.yaml -i "$(ip a | awk '/inet.*brd/{print $NF; exit}')"
