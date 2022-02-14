@@ -1,13 +1,9 @@
 # /usr/local/bin/start.sh will start the service
 
 # FROM registry.access.redhat.com/ubi8/ubi-minimal
-FROM fedora:34
+FROM fedora:latest
 
-# Pause indefinitely if asked to do so.
-ARG OO_PAUSE_ON_BUILD
-RUN test "$OO_PAUSE_ON_BUILD" = "true" && while sleep 10; do true; done || :
-
-RUN dnf install -y suricata && \
+RUN dnf install -y suricata iproute && \
     dnf clean all && \
     suricata-update && \
     sed -i -e 's/default-log-dir: \/var\/log\/suricata/default-log-dir: \/host\/var\/log/' /etc/suricata/suricata.yaml && \

@@ -12,7 +12,7 @@ if [ "$OO_PAUSE_ON_START" = "true" ] ; then
   done
 fi
 
-echo 'version v0.0.8'
+echo 'version v0.0.9'
 echo
 echo This container hosts the following applications:
 echo
